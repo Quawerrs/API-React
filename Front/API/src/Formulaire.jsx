@@ -8,7 +8,8 @@ const Formulaire = () => {
         question: '',
         reponse: ''
     });
-
+    const [listData, setListData]= useState([])
+    const [loading, setLoading]=useState(false)
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -19,20 +20,32 @@ const Formulaire = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
+        console.log(JSON.stringify(formData));
         fetch('http://localhost:5000/add', {
-            method: POST,
-            header: {
+            method: "POST",
+            headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(formData)
-        }).then(response=>console.log(response))
+        })
 
     };
+    const printQuestion = ()=>{
+        fetch("http://localhost:5000/question",{
+            method: "GET"
+        }).then(response =>response.json()).then(data=>{
+            
+            console.log(data) 
+            
+            setListData(data)
+            setLoading(true)
+        
+        })
+    }
 
-    
 
     return (
+        <>
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', maxWidth: '300px', margin: '0 auto' }}>
             <label htmlFor="id">ID :</label>
             <input type="text" id="id" name="id" value={formData.id} onChange={handleChange} />
@@ -47,7 +60,15 @@ const Formulaire = () => {
             <input type="text" id="reponse" name="reponse" value={formData.reponse} onChange={handleChange} />
 
             <button type="submit">Envoyer</button>
+            
         </form>
+        <button onClick={printQuestion}>Consoler le contenu de question</button>
+        {loading ? listData.map(data=>{
+            <p>
+                "test"
+            </p>
+        }): " rien a afficher"}
+        </>
     );
 };
 
