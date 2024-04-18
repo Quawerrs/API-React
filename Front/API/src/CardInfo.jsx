@@ -19,7 +19,7 @@ export default function CardInfor({ data }) {
 
 
     console.log(data)
-    return (
+ return (
 
         <>
             <div className="card">

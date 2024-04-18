@@ -28,7 +28,6 @@ app.post("/add",(req,res)=>{
     setQuestion = JSON.stringify(setQuestion,null,2)
     fs.writeFileSync("./question.json",setQuestion)
     res.status(201).json(setQuestion)
-   
 })
 app.listen(5000,()=>{
     console.log("Server listening port 5000")
