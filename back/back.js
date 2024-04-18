@@ -12,8 +12,9 @@ app.use(express.json());
 
 
 app.get("/question/:id",(req,res)=>{
-    id=param
-    question.find(quest => quest.id ===id)
+    id=req.params.id
+    const target = question.find(quest => quest.id ===id)
+    
 })
 app.get("/question",(req,res)=>{
     res.json(question)

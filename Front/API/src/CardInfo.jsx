@@ -1,4 +1,4 @@
-import "/card.css"
+import "./card.css"
 
 export default function CardInfor({ data }) {
 
@@ -22,11 +22,12 @@ export default function CardInfor({ data }) {
     return (
 
         <>
-            <div className="card" onClick={ }>
+            <div className="card">
                 <p>{data.id}</p>
                 <h3>{data.theme}</h3>
                 <h3>{data.question}</h3>
                 <h3>{data.response}</h3>
+                <a href="">Modifier</a>
             </div>
         </>
     )

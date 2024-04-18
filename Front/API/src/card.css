@@ -3,4 +3,5 @@
     min-height: 150px;
     background-color: darkslategray;
     color: aliceblue;
+    justify-self: center;
 }

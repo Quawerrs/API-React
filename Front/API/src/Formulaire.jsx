@@ -46,32 +46,33 @@ const Formulaire = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', maxWidth: '300px', margin: '0 auto' }}>
-                <label htmlFor="id">ID :</label>
-                <input type="text" id="id" name="id" value={formData.id} onChange={handleChange} />
+            <div className='formContainer'>
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', maxWidth: '300px', margin: '0 auto' }}>
+                    <label htmlFor="id">ID :</label>
+                    <input type="text" id="id" name="id" value={formData.id} onChange={handleChange} />
 
-                <label htmlFor="theme">Thème :</label>
-                <input type="text" id="theme" name="theme" value={formData.theme} onChange={handleChange} />
+                    <label htmlFor="theme">Thème :</label>
+                    <input type="text" id="theme" name="theme" value={formData.theme} onChange={handleChange} />
 
-                <label htmlFor="question">Question :</label>
-                <input type="text" id="question" name="question" value={formData.question} onChange={handleChange} />
+                    <label htmlFor="question">Question :</label>
+                    <input type="text" id="question" name="question" value={formData.question} onChange={handleChange} />
 
-                <label htmlFor="reponse">Réponse :</label>
-                <input type="text" id="reponse" name="reponse" value={formData.reponse} onChange={handleChange} />
+                    <label htmlFor="reponse">Réponse :</label>
+                    <input type="text" id="reponse" name="reponse" value={formData.reponse} onChange={handleChange} />
 
-                <button type="submit">Envoyer</button>
+                    <button type="submit">Envoyer</button>
 
-            </form>
-            <button onClick={printQuestion}>Consoler le contenu de question</button>
-            <div className='container'>
-                {loading ? listData.map(data =>
-                (
-                    <CardInfor data={data}></CardInfor>
-                )) : " rien a afficher"}
+                </form>
+                <button onClick={printQuestion}>Consoler le contenu de question</button>
 
+                <div className='container'>
+                    {loading && listData.map(data => (<CardInfor data={data}></CardInfor>))}
+                </div>
             </div>
 
+
         </>
+
     );
 };
 
