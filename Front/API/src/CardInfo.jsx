@@ -19,15 +19,15 @@ export default function CardInfor({ data }) {
 
 
     console.log(data)
-    return (
+ return (
 
-        <>
-            <div className="card" onClick={ }>
-                <p>{data.id}</p>
-                <h3>{data.theme}</h3>
-                <h3>{data.question}</h3>
-                <h3>{data.response}</h3>
-            </div>
-        </>
-    )
+<>
+    {/* <div className="card" onClick={ }>
+        <p>{data.id}</p>
+        <h3>{data.theme}</h3>
+        <h3>{data.question}</h3>
+        <h3>{data.response}</h3>
+    </div> */}
+</>
+)
 }
