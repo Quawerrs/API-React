@@ -19,7 +19,6 @@ const Formulaire = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Ici vous pouvez traiter les données du formulaire comme vous le souhaitez
     console.log(formData);
   };
 

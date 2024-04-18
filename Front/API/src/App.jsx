@@ -9,7 +9,10 @@ function App() {
 
   return (
     <>
-      For
+    <div>
+      <h1>Mon Application</h1>
+      <Formulaire />
+    </div>
     </>
   )
 }
